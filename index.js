@@ -1,5 +1,5 @@
 const { Client, GatewayIntentBits, Partials, Routes, REST, EmbedBuilder, ModalBuilder, TextInputBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, TextInputStyle, SlashCommandBuilder } = require('discord.js');
-const { token, clientId, guildId, logChannelId, allowedChannelId } = require('./config');
+const { clientId, guildId, logChannelId, allowedChannelId } = require('./config');
 
 const client = new Client({
     intents: [
@@ -142,7 +142,7 @@ client.on('interactionCreate', async interaction => {
     }
 });
 
-client.login(token);
+client.login(process.env.token);
 
 process.on('unhandledRejection', (reason, p) => {
     console.log(' [antiCrash] :: Unhandled Rejection/Catch');
